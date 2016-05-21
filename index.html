@@ -4,7 +4,7 @@
 <head>
   <meta name="viewport" content="width=320; user-scalable=no" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <title>ColorThief Demo</title>
+  <title>Annotate Analog Books Online</title>
 
   <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="http://tenso.rs/tesseract.js"></script>
@@ -43,6 +43,7 @@
 
   </div>
 
+  <p><span class="statusPercent">0</span> %</p>
 
 
 
@@ -84,6 +85,7 @@
                   Tesseract.recognize(img,{
                           progress: function(e){
                                 console.log(e)
+                                $('.statusPercent').text(e.recognized*100);
                                 }
                                   }).then( function(d){ document.getElementById('display').innerHTML+=d.text } )
                                 }
