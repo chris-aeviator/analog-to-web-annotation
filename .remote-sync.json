@@ -1,0 +1,13 @@
+{
+  "transport": "scp",
+  "uploadOnSave": true,
+  "deleteLocal": false,
+  "hostname": "aeviator.cc",
+  "target": "/var/www/vhosts/aeviator.cc/annotate.aeviator.cc",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "root",
+  "useAgent": true
+}
