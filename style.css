@@ -55,7 +55,7 @@ hr {
 \* ------------------------------------ */
 @media all and (max-width: 550px) {
   h1 {
-    font-size: 18px; }
+    font-size: 22px; }
   h2 {
     font-size: 15px; } }
 
@@ -472,13 +472,15 @@ html, body {
   margin: 0; }
 
 .main-content {
+  box-sizing: border-box;
   width: 100%;
+  padding: 30px;
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
 
 .image-uploader {
-  margin: 0 auto;
+  margin: 0 auto 20px;
   text-align: center; }
 
 .image {
@@ -488,3 +490,14 @@ html, body {
 .ocr-text {
   margin: 0 auto;
   text-align: center; }
+
+.footer {
+  margin: 0 auto;
+  text-align: center; }
+  .footer p {
+    font-size: .8rem;
+    color: #7f858c; }
+
+/* Elements visibility management */
+#image-process, .image-uploader-2, .image-uploader-3 {
+  display: none; }

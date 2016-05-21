@@ -12,17 +12,16 @@ html, body {
 }
 
 .main-content {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
+    box-sizing: border-box;
     width: 100%;
+    padding: 30px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
 
 .image-uploader {
-    margin: 0 auto;
+    margin: 0 auto 20px;
     text-align: center;
 }
 
@@ -35,3 +34,19 @@ html, body {
     margin: 0 auto;
     text-align: center;
 }
+
+.footer {
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+        font-size: .8rem;
+        color: $color-text-light;
+    }
+}
+
+/* Elements visibility management */
+#image-process, .image-uploader-2, .image-uploader-3 {
+    display: none;
+}
+
