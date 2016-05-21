@@ -44,6 +44,8 @@
 
 
   <script>
+
+
     var desiredWidth;
     $(document).ready(function() {
       console.log('onReady');
@@ -70,8 +72,20 @@
       if (event.target.files.length == 1 &&
         event.target.files[0].type.indexOf("image/") == 0) {
         var objectUrl$ = ("#yourimage").attr("src", URL.createObjectURL(event.target.files[0]));
+        processPicture();
         // console.log(objectUrl);
       }
+    }
+
+    function processPicture(){
+      console.log("now processing");
+      var img = $('#yourimage')('img.to_ocr')
+      Tesseract
+      .recognize( img, {
+        progress: show_progress} )
+      .then( display ) // scroll down for full output
+                       // you can edit this code
+
     }
   </script>
 </body>
