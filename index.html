@@ -39,7 +39,9 @@
   <img id="yourimage">
 
 
+  <div id="display">
 
+  </div>
 
 
 
@@ -81,17 +83,20 @@
     }
 
     function processPicture(){
-      console.log("now processing");
-      var img = $('#yourimage');
-      Tesseract
-  .recognize( img, {
-    progress: function(e){
-            console.log(e);
-        }} )
-  .then( display )
+      var img = new Image();
+          img.src = document.getElementById('yourimage').src;
 
+        img.onload = function() {
+                  Tesseract.recognize(img,{
+                          progress: function(e){
+                                console.log(e)
+                                }
+                                  }).then( function(d){ document.getElementById('display').innerHTML+=d.text } )
+                                }
     }
   </script>
+
+
 </body>
 
 </html>
