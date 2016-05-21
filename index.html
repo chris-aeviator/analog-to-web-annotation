@@ -75,19 +75,20 @@
 
         console.log("showing picture");
         $("#yourimage").attr("src", URL.createObjectURL(event.target.files[0]));
-
+        processPicture();
         // console.log(objectUrl);
       }
     }
 
     function processPicture(){
       console.log("now processing");
-      var img = $('#yourimage')('img.to_ocr')
+      var img = $('#yourimage');
       Tesseract
-      .recognize( img, {
-        progress: show_progress} )
-      .then( display ) // scroll down for full output
-                       // you can edit this code
+  .recognize( img, {
+    progress: function(e){
+            console.log(e);
+        }} )
+  .then( display )
 
     }
   </script>
