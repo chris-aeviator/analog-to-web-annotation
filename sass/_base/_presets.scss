@@ -1,0 +1,71 @@
+/**
+ * PRESETS  
+ *
+ * BASIC SETTINGS and DEFAULT STYLES
+ */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+* {
+    letter-spacing: .04rem !important;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+    background-color: $color-background-light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+   margin: 0;
+   padding: 0;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Tells the user there are no results */
+.search-no-result {
+    display: table;
+    width: 100%;
+
+    p {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+}

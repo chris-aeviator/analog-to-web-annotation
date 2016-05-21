@@ -1,0 +1,37 @@
+/**
+ * BASIC LAYOUT
+ *
+ * Grid settings and layout settings
+ */
+
+
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.main-content {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.image-uploader {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.image {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ocr-text {
+    margin: 0 auto;
+    text-align: center;
+}

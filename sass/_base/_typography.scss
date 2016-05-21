@@ -1,0 +1,82 @@
+/**
+ * TYPOGRAPHY
+ *
+ * FONT SETTINGS 
+ */
+
+/* ------------------------------------ *\
+   #GENERAL TYPOGRAPHY
+\* ------------------------------------ */
+
+body {
+    color: $color-text;
+    font-family: $font;
+}
+
+h1 {
+    color: $color-text-headings;
+    font-size: 2rem;
+    font-weight: $font-weight-normal;
+    line-height: 1.15;
+}
+
+h1.home-heading {
+    font-weight: $font-weight-normal;
+}
+
+h2 {
+    color: $color-text-headings;
+    font-size: 1.6rem;
+    font-weight: $font-weight-normal;
+    line-height: 1.3;
+}
+
+h3 {
+    color: $color-text-headings;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-bold;
+}
+
+p {
+    color: $color-text;
+    font-size: $font-size-text;
+    font-weight: $font-weight-normal;
+    line-height: 1.35;
+}
+
+span {
+    line-height: 1.5;
+}
+
+a {
+    color: $color-button-cta-bg;
+    text-decoration: none;
+    transition: color 0.5s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-button-cta-bg-active;
+    }
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid $color-border-normal;
+}
+
+/* ------------------------------------ *\
+   #RESPONSIVE
+\* ------------------------------------ */
+
+@media all and (max-width: $bp-small) { // 550px
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+}

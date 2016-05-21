@@ -1,0 +1,295 @@
+/**
+ * HEADER LAYOUT
+ *
+ * Desktop first
+ */
+
+
+/* ------------------------------------ *\
+   #BASIC-HEADER
+\* ------------------------------------ */
+
+.l-site-header {
+    position: fixed;
+    width: 100%;
+    height: $toolbar-height;
+    background: $color-background-dark;
+    color: #fff;
+    z-index: 3000; // TODO Variable!
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+
+/* ------------------------------------ *\
+   #LOGO
+\* ------------------------------------ */
+
+.logo {
+    height: $toolbar-height;
+    float: left;
+
+    /* The logo itself on the left */
+    .glyph {
+        display: block;
+        float: left;
+        width: $toolbar-height;
+        height: $toolbar-height;
+        background-color: #3B414C; // TODO Add variable!
+        font-size: 1.7rem;
+        text-align: center;
+        text-shadow: 0 -1px 0 #000;
+        line-height: $toolbar-height;
+    }
+
+    /* "Pundit" */
+    .copy {
+        display: block;
+        float: left;
+        height: $toolbar-height;
+        margin-left: 15px;
+        font-size: 4.5rem;
+        line-height: $toolbar-height;
+        text-shadow: 0 -1px 0 #000;
+    }
+}
+
+
+/* ------------------------------------ *\
+   #RIGHT-ELEMENTS
+\* ------------------------------------ */
+
+.header-elements {
+    float: right;
+
+    li {
+        display: block;
+        float: left;
+    }
+}
+
+
+/* ------------------------------------ *\
+   #USER-PROFILE
+\* ------------------------------------ */
+
+.dropdown-user-menu {
+    height: $toolbar-height;
+    margin: 0;
+    position: relative;
+
+    /* User's thumb */
+    img {
+        display: block;
+        float: left;
+        width: 34px;
+        height: 34px;
+        margin-top: ($toolbar-height - 34)/2;
+        margin-left: 13px;
+        margin-right: 8px;
+    }
+
+    /* User's name */
+    .username {
+        display: block;
+        float: left;
+        max-width: 220px;
+        margin: 0;
+        padding: 0 5px;
+        line-height: $toolbar-height;
+
+        font-size: .88rem;
+        font-weight: $font-weight-normal;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    /* Caret icon */
+    .pnd-icon {
+        display: block;
+        height: 40px;
+        float: left;
+        margin: 0 15px 0 2px;
+        padding-top: 17px;
+    }
+
+    /* Dropdown */
+    .pnd-dropdown {
+        display: none;
+        top: $toolbar-height;
+        right: 0;
+        border-radius: 0 0 $dropdown-round-corners $dropdown-round-corners;
+    }
+
+    &.is-open > .pnd-dropdown {
+        display: block;
+    }
+}
+
+
+/* ------------------------------------ *\
+   #SEARCH
+\* ------------------------------------ */
+
+.header-search {
+    height: $toolbar-height;
+
+    form {
+        position: relative;
+    }
+
+    .search-input {
+        height: $toolbar-height - 16;
+        width: 200px;
+        margin: 8px 8px 0 0;
+    }
+
+    button {
+        position: absolute;
+        width: $toolbar-height - 16;
+        height: $toolbar-height - 16;
+        margin: 8px 8px 0 0;
+        padding: 0;
+        top: 0;
+        right: 0;
+        background: transparent;
+        border: none;
+        outline: none;
+
+        span {
+            color: $color-text-light;
+        }
+    }
+
+    /* Button for mobile that toggles the search input */
+    .header-search-mobile-btn {
+        display: none;
+        width: $toolbar-height-mobile;
+        height: $toolbar-height-mobile;
+        text-align: center;
+        position: relative;
+        background-color: #3B414C; // TODO Add variable!
+        border-radius: 0;
+        cursor: pointer;
+
+        .pnd-icon {
+            line-height: $toolbar-height-mobile;
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #RESPONSIVE
+\* ------------------------------------ */
+
+@media all and (max-width: $bp-medium) { // 700px
+
+    .dropdown-user-menu {
+        /* User's name */
+        .username {
+            max-width: 140px;
+        }
+    }
+
+    .header-search {
+        .search-input {
+            width: 150px;
+        }
+    }
+
+}
+
+@media all and (max-width: $bp-med-small) { // 550px
+
+    .l-site-header {
+        height: $toolbar-height-mobile;
+    }
+
+    .logo {
+        height: $toolbar-height-mobile;
+
+        /* The logo itself on the left */
+        .glyph {
+            width: $toolbar-height-mobile;
+            height: $toolbar-height-mobile;
+            font-size: 1.7rem;
+            line-height: $toolbar-height-mobile;
+        }
+
+        /* "Pundit" */
+        .copy {
+            line-height: $toolbar-height-mobile;
+            // display: none;
+        }
+    }
+
+    .dropdown-user-menu {
+        height: $toolbar-height;
+        margin: 0;
+        position: relative;
+
+        /* User's thumb */
+        img {
+            margin-top: ($toolbar-height-mobile - 34)/2;
+        }
+
+        /* User's name */
+        .username {
+            display: none;
+        }
+
+        /* Caret icon */
+        .pnd-icon {
+            display: none;
+        }
+
+        /* Dropdown */
+        .pnd-dropdown {
+            top: $toolbar-height-mobile;
+        }
+    }
+
+    .header-search {
+
+        .header-search-mobile-btn {
+            display: block;
+        }
+
+        /* The default search field is hidden for mobile */
+        .search-dropdown {
+            display: none;
+        }
+
+        /* Open search for Mobile */
+        &.is-open {
+
+            .search-dropdown {
+                display: block;
+                position: absolute;
+                top: $toolbar-height-mobile;
+                right: 0;
+                left: 0;
+                z-index: 10;
+                background-color: $color-background-light;
+                border-bottom: 1px solid $color-border-normal;
+
+                form {
+                    width: 100%;
+                    padding: 8px;
+                }
+
+                .search-input {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+
+        }
+    }
+
+}

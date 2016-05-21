@@ -1,0 +1,134 @@
+/**
+ * DROPDOWN
+ *
+ * Style of dropdowns or contextual menus
+ */
+
+/* ------------------------------------ *\
+   #TOGGLE-LOGIC
+\* ------------------------------------ */
+.pnd-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+
+    .pnd-dropdown-toggle {
+
+        & + .pnd-dropdown {
+            display: none;
+        }
+
+        &.active + .pnd-dropdown {
+            display: block;
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #DROPDOWN
+\* ------------------------------------ */
+ul.pnd-dropdown {
+
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    z-index: 100; // TODO VARIABLE
+    background: $color-dropdown-bg;
+    border: 1px solid $color-border-normal;
+    border-radius: $dropdown-round-corners;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    .divider {
+        display: block;
+        height: 1px;
+        background-color: $color-border-normal;
+        border: none;
+        margin: 0;
+    }
+
+    li {
+        float: none;
+
+        a {
+            display: block;
+
+            height: auto;
+            max-width: 350px;
+            min-width: 120px;
+            padding: 5px 10px;
+            overflow: hidden;
+
+            border-right: 0;
+            border-left: 0;
+            background-color: $color-dropdown-bg;
+
+            font-size: 0.88rem;
+            font-weight: $font-weight-normal;
+            color: $color-dropdown-text;
+            white-space: nowrap;
+            line-height: 1.5;
+            text-overflow: ellipsis;
+            text-align: left;
+
+            &:hover {
+                background-color: $color-dropdown-bg-hover;
+                text-decoration: none;
+            }
+
+            &:focus, &:visited, &:active {
+                // background-color: $color-dropdown-bg;
+            }
+
+            .pnd-icon {
+                display: inline-block;
+                width: 18px;
+                margin: 0 6px 0 0;
+                background: transparent none;
+                text-align: center;
+            }
+        }
+    }
+
+    /* Selected or active element */
+    li.active a {
+        background-color: $color-dropdown-active;
+
+        &:hover,
+        &:focus {
+            color: $color-dropdown-text;
+            text-decoration: none;
+            outline: 0;
+        }
+    }
+
+    /* Disabled elements */
+    li.disabled {
+        a {
+            color: fade($color-dropdown-text, 40%);
+
+            &:hover {
+                background-color: $color-dropdown-bg;
+            }
+        }
+    }
+
+    /* Textual indications inside dropdown */
+    .dropdown-header {
+        padding: 10px;
+
+        font-size: 0.88rem;
+        font-weight: $font-weight-normal;
+
+        color: $color-text-light;
+        white-space: nowrap;
+        line-height: 1.5;
+        text-overflow: ellipsis;
+        text-align: left;
+    }
+
+    /* Used for display toggle */
+    &.hidden {
+        display: block;
+    }
+}

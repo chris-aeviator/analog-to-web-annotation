@@ -35,16 +35,32 @@
 
 <body>
 
-  <input type="file" capture="camera" accept="image/*" id="takePictureField">
+  <main class="main-content">
 
-  <img id="yourimage">
+    <div class="image-uploader">
+      <h1>Welcome to Analogue Webnotator</h1>
+      <p>Choose an image with the text you want to annotate</p>
+      <input type="file" class="inputfile" name="file" capture="camera" accept="image/*" id="takePictureField">
+      <label for="takePictureField">Choose a file</label>
+    </div>
 
+    <div class="image">
+      <img id="yourimage">
+      <p>Processing image... <span class="statusPercent">0</span> %</p>
+    </div>
 
-  <div id="display">
+    <div class="ocr-text">
+      <div id="display"></div>
+    </div>
 
-  </div>
+    <div class="footer">
+      <p>
+        Developed 4 iAnnotate 2016
+      </p>
+    </div>
 
-  <p><span class="statusPercent">0</span> %</p>
+  </main>
+
 
 
 

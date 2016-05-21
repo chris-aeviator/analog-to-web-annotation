@@ -1,0 +1,197 @@
+/**
+ * NOTEBOOKS LIST ELEMENT
+ *
+ * Style for each notebook in the list of notebooks
+ */
+
+
+/* ------------------------------------ *\
+   #NOTEBOOK-BASICS
+\* ------------------------------------ */
+
+.pnd-notebook {
+    & > a {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        min-height: 237px;
+        padding: 10px 20px 10px 40px;
+        margin-bottom: 20px;
+
+        background-color: #fff;
+        border: 1px solid $color-border-normal;
+        border-radius: 0 8px 8px 0;
+        box-shadow: 0 3px 0 $color-shadow;
+        transition: all 0.2s ease;
+
+        /* Dashed line decoration on left side of the notebook element */
+        &::before {
+            content: "";
+            display: block;
+            width: 94%;
+            height: 100%;
+            margin-left: 20px;
+            border-left: 1px dashed $color-border-normal;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &:hover,
+        &:focus {
+            border: 1px solid $color-border-highlight;
+            box-shadow: 0 5px 0 $color-shadow;
+
+            &::before {
+                border-left-color: $color-border-highlight;
+            }
+        }
+
+        @media (max-width: $bp-small) {
+            min-height: 200px;
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #NOTEBOOK-HEADER
+\* ------------------------------------ */
+
+.notebook-title-div {
+    height: 106px;
+    position: relative;
+    overflow: hidden;
+    overflow-y: auto;
+
+    h2 {
+        display: block;
+        color: $color-brand; //  $color-text;
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ------------------------------------ *\
+   #NOTEBOOK-INFO
+\* ------------------------------------ */
+
+.notebook-info {
+    margin: 0 20px 0 0;
+    padding: 8px 0 6px 0;
+    border-top: 1px solid $color-border-normal;
+    border-bottom: 1px solid $color-border-normal;
+    position: absolute;
+    right: 0;
+    bottom: 46px;
+    left: 40px;
+    line-height: 1.4;
+    color: $color-text-light;
+
+    span {
+        display: inline-block;
+        width: 100%;
+        font-size: .88rem;
+        font-weight: $font-weight-normal;
+        line-height: 1.4;
+
+        strong {
+            margin-right: 6px;
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #NOTEBOOK-FOOTER
+\* ------------------------------------ */
+
+.notebook-footer {
+    position: absolute;
+    bottom: 14px;
+    color: $color-text-light;
+    font-size: .88rem;
+    font-weight: $font-weight-normal;
+}
+
+
+/* ------------------------------------ *\
+   #NOTEBOOK-EDIT
+\* ------------------------------------ */
+
+.notebook-li, .new-notebook  {
+    .input-element {
+        width: 100%;
+        height: 155px;
+        margin-top: 5px;
+        position: relative;
+        z-index: 100; // TODO Create variable
+    }
+
+    .btn-group {
+        position: absolute;
+        right: 20px;
+        bottom: 15px;
+        text-align: right;
+
+        .pnd-btn {
+            margin-left: 15px;
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #NEW-NOTEBOOK-SAVING
+\* ------------------------------------ */
+
+.gallery-item-grid.notebook-loader {
+    
+    & > a {
+        display: table;
+
+        .notebook-title {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+
+            h2 {
+                display: inline-block;
+                position: relative;
+                font-size: 1.2rem;
+                color: $color-text;
+            }
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #RESPONSIVE
+\* ------------------------------------ */
+
+@media all and (max-width: $bp-med-small) { // 550px
+
+    .notebook-title-div {
+        height: 84px;
+
+        h2 {
+            font-size: 1rem;
+        }
+    }
+
+    .notebook-info {
+        bottom: 40px;
+        span {
+            font-size: 0.78rem;
+        }
+    }
+
+    .notebook-footer {
+        bottom: 11px;
+        font-size: 0.78rem;
+    }
+
+}

@@ -1,0 +1,180 @@
+//
+// VARIABLES
+//
+// Variables for the whole application
+//
+
+
+// ------------------------------------ //
+// #FONT
+// ------------------------------------ //
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,300,400italic,600,600italic,700,700italic);
+$font: 'Source Sans Pro', sans-serif;
+
+// Font sizes
+$font-size-home: 44px;
+$font-size-h1: 30px;
+$font-size-h2: 24px;
+$font-size-h3: 18px;
+$font-size-text: 16px;
+$font-size-small-text: 13px;
+
+// Font weight
+$font-weight-normal: 100;
+$font-weight-bold: 600;
+
+
+// ------------------------------------ //
+// #COLORS
+// ------------------------------------ //
+
+// Color scheme
+// Same as Pundit Annotator
+$color-ultra-light: #FAFBFC;
+$color-light: #F2F5F7;
+$color-light-gray: #DFE2E6;
+$color-dark-gray: #9fa6ad; // #7E858C;
+$color-dark: #242D38;
+
+$color-brand: #3484E6;
+$color-error: #FF643F;
+$color-warning: #febe53;
+$color-highlight: #FFFFB8;
+$color-highlight-hover: fade(#2ee6e6, 40%);
+
+// Semantic colors
+// Same as Pundit Annotator
+$color-predicate: #febe53;
+
+// Text Colors
+$color-text: $color-dark; // TOD Rename @color-text
+$color-text-light: #7f858c; //
+$color-text-headings: $color-text-light;
+$color-text-link: $color-brand;
+$color-text-link-hover: #224E8C;
+$color-text-link-visited: #4C2C92;
+$color-text-form-placeholder: #AEB1B5;
+
+// Borders
+$color-border-light: $color-light;
+$color-border-normal: $color-light-gray;
+$color-border-highlight: $color-brand;
+
+// Backgrounds, shadows
+$color-background-base: #FFF;
+$color-background-light: $color-ultra-light;
+$color-background-medium: $color-light;
+$color-background-dark: $color-dark;
+$color-shadow: #E9ECF0; // TODO This should be used
+
+
+// ------------------------------------ //
+// #BUTTONS
+// ------------------------------------ //
+
+$button-font-weight: $font-weight-normal; // TODO Not used
+
+// Button call to action
+$color-button-cta-text: #FFF; // TODO Not used
+$color-button-cta-text-disabled: #D7E5FA; // TODO Not used
+
+$color-button-cta-bg: $color-brand;
+$color-button-cta-bg-hover: #2E6ABF;
+$color-button-cta-bg-active: #224E8C;
+$color-button-cta-bg-disabled: #9BBFF2; // TODO Not used
+
+// Button normal
+$color-button-text: $color-brand; // TODO Not used
+$color-button-text-hover: #2E6ABF; // TODO Not used
+// $color-button-text-active: #224E8C;
+$color-button-text-disabled: #CDDFF8; // TODO Not used
+
+$color-button-bg: $color-light; // #FFF;
+$color-button-bg-hover: #FFF;
+$color-button-bg-active: #FFF; // TODO Not used
+$color-button-bg-disabled: #FFF;
+
+$color-button-border: $color-light-gray; // @color-brand;
+$color-button-border-hover: $color-light-gray; // TODO Not used
+$color-button-border-active: $color-light-gray; // TODO Not used
+$color-button-border-disabled: $color-light-gray; // TODO Not used
+
+$button-border-width: 1px; // TODO Not used
+
+// Button light bg
+$color-button-light-text: $color-brand;
+$color-button-light-text-hover: #2E6ABF;
+$color-button-light-text-active: #224E8C;
+$color-button-light-text-disabled: #CDDFF8;
+
+
+// ------------------------------------ //
+// #TOOLBAR
+// ------------------------------------ //
+
+$toolbar-height: 50px;
+$toolbar-height-mobile: 45px;
+$toolbar-btn-gray: #404852;
+
+
+// ------------------------------------ //
+// #LEFT-MENU
+// ------------------------------------ //
+
+$left-nav-buttons-height: 98px;
+$left-nav-mobile-height: 40px;
+$left-nav-bg-color: #91979E;
+$left-nav-item-bg-color: #FBFBFB;
+$left-nav-item-active-bg-color: #F2F5F7;
+
+
+// ------------------------------------ //
+// #TYPES
+// ------------------------------------ //
+
+$type-color-bg: $color-light;
+$type-color-border: $color-light-gray;
+$type-color-text: $color-dark-gray;
+$type-border-size: 1px;
+
+$type-border-radius: 3px;
+
+
+// ------------------------------------ //
+// #DROPDOWN-CONTEXTUAL-MENU
+// ------------------------------------ //
+$dropdown-round-corners: 3px;
+
+// Dropdown
+$color-dropdown-bg: #ffffff;
+$color-dropdown-active: $color-light;
+$color-dropdown-bg-hover: $color-light;
+$color-dropdown-text: $color-text;
+
+
+// ------------------------------------ //
+// #FORMS
+// ------------------------------------ //
+$input-border-radius: 2px;
+$input-border-color: $color-light-gray;
+$input-border-size: 1px;
+$input-border-color-focus: $color-brand;
+
+
+// ------------------------------------ //
+// #MEDIA QUERIES BREAKPOINTS
+// ------------------------------------ //
+
+$bp-xsmall: 320px;
+$bp-small: 550px;
+$bp-small-min: 551px;
+$bp-med-small: 550px;
+$bp-med-small-min: 551px;
+$bp-medium: 700px;
+$bp-ipad-portrait: 768px;
+$bp-intermedium: 850px;
+$bp-tablet: 960px;
+$bp-ipad-landscape: 1024px;
+$bp-large: 1050px;
+$bp-xlarge: 1350px;

@@ -1,0 +1,346 @@
+/**
+ * ANNOTATION LIST ELEMENT
+ *
+ * 
+ */
+
+/* ------------------------------------ *\
+   #SINGLE-ANNOTATION
+\* ------------------------------------ */
+.pnd-annotation {
+    .annotation-container {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding: 10px 20px 10px 40px;
+        padding: 0;
+        margin-bottom: 20px;
+
+        background-color: #fff;
+        border: 1px solid $color-border-normal;
+        border-radius: 3px;
+        box-shadow: 0 3px 0 $color-shadow;
+        transition: all 0.2s ease;
+    }
+}
+
+
+/* ------------------------------------ *\
+   #ANNOTATION-HEADER
+\* ------------------------------------ */
+.annotation-header {
+    display: block;
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid $color-border-normal;
+    @include cf;
+
+    /* Thumb of the author of the annotation */
+    .author-thumb {
+        position: relative;
+        float: left;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    }
+
+    /* Text contained in the annotation header */
+    span {
+        display: block;
+        font-size: 0.78rem;
+        line-height: 1.35;
+        color: $color-text;
+    }
+
+    .author-name {
+        font-weight: $font-weight-bold;
+    }
+
+    .annotation-time {
+        font-weight: $font-weight-normal;
+    }
+}
+
+
+/* ------------------------------------ *\
+   #ENTITY
+\* ------------------------------------ */
+
+/* General formatting for displaying entities... mostly used to display
+LOD entities in the object */
+.entity-image {
+    display: block;
+    float: left;
+    margin: 0 10px 3px 0;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+
+    border-radius: 3px;
+    background-color: $color-light-gray;
+    vertical-align: middle;
+    text-align: center;
+
+    img {
+        max-width:100%;
+        max-height:100%;
+    }
+}
+
+.entity-title {
+    display: block;
+    margin-bottom: 9px;
+    color: $color-text;
+    font-size: .95rem;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+
+    a {
+        color: $color-text;
+
+        &:hover {
+            color: $color-text-link;
+        }
+    }
+}
+
+.entity-description {
+    display: block;
+    clear: both;
+    font-size: .95rem;
+}
+
+
+/* ------------------------------------ *\
+   #TRIPLE
+\* ------------------------------------ */
+.triple {
+    border-bottom: 3px double $color-border-normal;
+
+    &.last-triple {
+        border-bottom: 0;
+    }
+}
+
+
+/* ------------------------------------ *\
+   #ANNOTATION-SUBJECT
+\* ------------------------------------ */
+
+.subject {
+
+    padding: 15px;
+
+    p span {
+        font-size: .95rem;
+        line-height: 1.4;
+    }
+
+    /* Text fragment */
+    &.text-fragment {
+        p span {
+            background: $color-highlight;
+            font-style: italic;
+        }
+    }
+
+    /* Undefined type... for retro compatibility with old annotations */
+    &.undefined {
+        p span {
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #ANNOTATION-PREDICATE
+\* ------------------------------------ */
+
+.predicate {
+    height: 9px;
+
+    span {
+        display: inline-block;
+        position: relative;
+        width: auto;
+        height: 22px;
+        padding: 0 5px;
+        margin-left: 15px;
+        top: 0;
+        background: $color-predicate;
+        border-radius: 3px;
+        font-size: .88rem;
+        font-weight: $font-weight-normal;
+        line-height: 22px;
+        font-style: italic;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.10);
+        z-index: 300;
+
+        &:before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            margin-left: -2px;
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-bottom: 3px solid $color-predicate;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            margin-left: -2px;
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top: 3px solid $color-predicate;
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        .semantic-tooltip {
+            opacity: 1;
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #ANNOTATION-OBJECT
+\* ------------------------------------ */
+
+.object {
+    position: relative;
+    padding: 15px;
+    background: $color-background-light;
+    border-top: 1px solid $color-border-normal;
+
+    p {
+        span {
+            font-size: .95rem;
+            line-height: 1.4;
+        }
+    }
+
+    /* Not-semantic comment */
+    &.comment {
+        margin-top: 5px;
+
+        /* Arrow decoration - Top Triangle */
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-top: 0;
+        }
+
+        /* Stroke */
+        &::before {
+            top: -10px;
+            left: 21px;
+            /* If 1px darken stroke slightly */
+            border-bottom-color: $color-border-normal;
+            border-width: 10px;
+        }
+        /* Fill */
+        &::after {
+            top: -8px;
+            left: 22px;
+            border-bottom-color: $color-background-light;
+            border-width: 9px;
+        }
+    }
+
+    /* Semantic annotation with text-fragment as object */
+    &.text-fragment {
+        padding-top: 23px;
+    }
+
+    /* Semantic annotation with en entity as object */
+    &.entity {
+        padding-top: 30px;
+    }
+}
+
+
+
+/* ------------------------------------ *\
+   #MULTIPLE-TRIPLE DA GESTIRE!!!!
+\* ------------------------------------ */
+
+.text-fragment.fragment-object {
+
+    .multiple-triple & {
+        border-bottom: 4px solid $color-border-normal;
+
+        &:last-of-type {
+            border-bottom: 2px solid $color-border-normal;
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #ANNOTATION-FOOTER
+\* ------------------------------------ */
+.annotation-footer {
+
+    width: 100%;
+    height: 30px;
+    padding: 0 7px;
+    border-top: 1px solid $color-border-normal;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    a {
+        font-size: 0.78rem;
+        color: $color-text-light;
+        font-weight: $font-weight-normal;
+        line-height: 30px;
+
+        &:hover,
+        &:focus {
+            color: $color-text-link;
+        }
+
+        .pnd-icon {
+            display: inline-block;
+            margin-right: 3px;
+        }
+
+        strong {
+            font-weight: $font-weight-bold;
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #RESPONSIVE
+\* ------------------------------------ */
+
+// TODO!

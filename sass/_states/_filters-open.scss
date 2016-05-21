@@ -1,0 +1,106 @@
+/**
+ * PAGE LAYOUT WITH FILTERS OPEN
+ *
+ *  
+ */
+
+/* ------------------------------------ *\
+   #DESKTOP
+\* ------------------------------------ */
+
+.filters-open {
+    position: relative;
+
+    .filters-bar {
+        display: block;
+        width: 310px;
+        margin-top: -25px;
+        margin-right: 25px;
+    }
+
+    .content-wrap {
+        padding-right: 340px;
+    }
+
+    .content-left {
+        // min-height: 105vh;
+        // margin-top: -26px;
+        // padding-top: 26px;
+        // box-shadow: 1px 0 0 $color-border-normal;
+        @include cf;
+    }
+}
+
+
+/* ------------------------------------ *\
+   #RESPONSIVE
+\* ------------------------------------ */
+
+@media all and (max-width: $bp-intermedium) { // 850px
+
+    .filters-open {
+
+        .filters-bar {
+            width: 260px;
+        }
+
+        .content-wrap {
+            padding-right: 280px;
+        }
+    }
+
+}
+
+@media all and (max-width: $bp-ipad-portrait) { // 700px
+
+    .filters-open {
+
+        .filters-bar {
+            margin-top: -18px;
+            margin-right: 18px;
+        }
+
+        .content-wrap {
+        }
+    }
+
+}
+
+@media all and (max-width: $bp-medium) { // 700px
+
+    .filters-open {
+
+        .filters-bar {
+            width: 210px;
+        }
+
+        .content-wrap {
+            padding-right: 230px;
+        }
+    }
+
+}
+
+@media all and (max-width: $bp-med-small) { // 550px
+
+    .filters-open {
+
+        .filters-bar {
+            width: 100%;
+            padding: 0 15px;
+            margin: -10px 0 0 0;
+
+            form {
+                position: relative;
+                padding-bottom: 10px;
+                border-top: 1px solid $color-border-normal;
+                border-bottom: 1px solid $color-border-normal;
+            }
+        }
+
+        .content-wrap {
+            padding-right: 0;
+        }
+    }
+
+}

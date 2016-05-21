@@ -1,0 +1,144 @@
+/**
+ * LEFT SIDEBAR LAYOUT
+ *
+ * Left column containing main navigation
+ *
+ */
+
+.l-sidebar {
+    position: fixed;
+    height: auto;
+    top: $toolbar-height;
+    left: 0;
+    bottom: 0;
+    border-right: 1px solid $color-border-normal;
+    background-color: $color-background-base;
+    font-size: 13px;
+    z-index: 20000; // TODO Variable!
+
+    li {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: $left-nav-buttons-height;
+        clear: left;
+    }
+
+    a {
+        display: block;
+        width: 100%;
+        height: $left-nav-buttons-height;
+        padding-top: 28px;
+        border-bottom: 1px solid $color-border-normal;
+        color: $left-nav-bg-color;
+        font-weight: $font-weight-normal;
+        line-height: 2;
+        text-decoration: none;
+        text-align: center;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+
+        &:hover {
+            background-color: $color-background-light;
+        }
+
+        .pnd-icon {
+            display: block;
+            font-size: 1.7rem;
+            margin-bottom: 3px;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent;
+            display: none;
+        }
+
+        &::before {
+            border-left-color: $color-border-normal;
+            border-width: 8px;
+            right: -16px;
+            margin-top: -9px;
+        }
+
+        &::after {
+            border-left-color: $left-nav-item-active-bg-color;
+            border-width: 7px;
+            right: -14px;
+            margin-top: -8px;
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #ACTIVE STATE OF MENU ELEMENT
+\* ------------------------------------ */
+
+.is-active {
+    a {
+        background-color: $left-nav-item-active-bg-color;
+
+        &:hover {
+            background-color: $left-nav-item-active-bg-color;
+        }
+
+        &::after,
+        &::before {
+            display: block;
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #RESPONSIVE
+\* ------------------------------------ */
+@media all and (max-width: $bp-small-min) {
+
+    .l-sidebar {
+        height: $left-nav-mobile-height;
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        z-index: 1000; // TODO Create variable
+        border-right: 0;
+        border-top: 1px solid $color-border-normal;
+
+        li {
+            // display: block;
+            height: $left-nav-mobile-height;
+            width: 50%;
+            float: left;
+            clear: none;
+            border-right: 1px solid $color-border-normal;
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
+
+        a {
+            height: $left-nav-mobile-height;
+            padding: 10px 0;
+
+            .pnd-icon {
+                font-size: 1.3rem;
+            }
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+        .label {
+            display: none;
+        }
+    }
+}

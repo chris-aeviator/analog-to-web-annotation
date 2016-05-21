@@ -1,0 +1,39 @@
+/**
+ * GENERAL ELEMENTS
+ *
+ * styles for some reusable elements like highlighted elements for text etc
+ */
+
+
+/* ------------------------------------ *\
+   #FLIPPED ELEMENT
+\* ------------------------------------ */
+
+.flipped {
+    transform: rotate(180deg);
+}
+
+
+/* ------------------------------------ *\
+   #ROUND IMAGE
+\* ------------------------------------ */
+
+.image-circle {
+   border-radius: 50%;
+}
+
+/* ------------------------------------ *\
+   #DISPLAY
+\* ------------------------------------ */
+
+.display-none {
+    display: none !important;
+}
+
+.display-block {
+    display: block !important;
+}
+
+.display-inlineblock {
+    display: inline-block !important;
+}

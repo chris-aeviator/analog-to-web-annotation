@@ -1,0 +1,41 @@
+/**
+ * GRID SETTINGS WHEN FILTERS BAR IS OPEN
+ *
+ *  
+ */
+
+/* ------------------------------------ *\
+   #GRID SETTINGS WHEN FILTERS BAR IS OPEN
+\* ------------------------------------ */
+
+.filters-open {
+
+    .gallery {
+        padding: 0 0 0 15px;
+        @include span(8 of 12);
+        //@include cf;
+    }
+
+    .gallery-item-grid {
+        @extend .gallery-item-large;
+
+        @media (min-width: 700px) {
+            // @include gallery(4);
+            @include span(4);
+
+            &:nth-child(2n) {
+                @include last;
+            }
+        }
+    }
+
+    .filters-bar {
+        @include span(4 of 12 last);
+        @include cf;
+    }
+
+    .pagination {
+        @include span(8 of 12);
+    }
+}
+
