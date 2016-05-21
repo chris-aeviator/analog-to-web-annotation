@@ -1,0 +1,24 @@
+{
+  "name": "analogue-webnotator",
+  "version": "1.0.0",
+  "description": "This project aims to annotate a physical book online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-aeviator/analog-to-web-annotation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chris-aeviator/analog-to-web-annotation/issues"
+  },
+  "homepage": "https://github.com/chris-aeviator/analog-to-web-annotation#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.0.0",
+    "gulp-sass": "^2.3.1"
+  }
+}
