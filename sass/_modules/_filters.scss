@@ -1,0 +1,256 @@
+/**
+ * FILTER BAR ELEMENTS STYLES
+ *
+ * 
+ */
+
+/* ------------------------------------ *\
+   #FILTERS RIGHT BAR
+\* ------------------------------------ */
+
+.filters-bar {
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding-right: 0;
+    z-index: 1000;
+    @include cf
+
+    form {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        background-color: $color-background-base;
+        border-left: 1px solid $color-border-normal;
+        border-right: 1px solid $color-border-normal;
+    }
+
+    /*
+    @media (min-width: $bp-small-min) {
+        bottom: 0;
+    }
+
+    @media (max-width: $bp-intermedium){
+        padding-left: 15px;
+        border-left: 1px solid $color-border-normal;
+    }
+
+    @media (max-width: $bp-small) {
+        width: 100%;
+        padding-right: 15px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $color-border-normal;
+    }
+    */
+}
+
+/* Accordion header */
+
+/*.form-element-header {
+    color: $color-text;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-text;
+    }
+}*/
+
+
+/* ------------------------------------ *\
+   #FILTERS ELEMENT
+\* ------------------------------------ */
+
+.form-element {
+    background-color: $color-background-light;
+    border-bottom: 1px solid $color-border-normal;
+
+    .form-element-header {
+        display: block;
+        position: relative;
+        width: 100%;
+        padding: 10px;
+
+        h3 {
+            font-size: .88rem;
+            font-weight: $font-weight-bold;
+            color: $color-text;
+        }
+
+        span {
+            position: absolute;
+            top: 13px;
+            right: 10px;
+            font-size: .88rem;
+            color: $color-dark-gray;
+
+            &:hover {
+                color: $color-text-link;
+            }
+        }
+    }
+
+    /* Content with list of elements to select */
+    .form-element-content {
+        display: none;
+        padding: 0 10px 10px 10px;
+
+        .checkbox {
+            border-bottom: 1px solid $color-border-light;
+            color: $color-text;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+
+    /* Free text search */
+    .search {
+        display: block;
+        margin: 0;
+        padding: 10px;
+
+        .input-element {
+            width: 100%;
+        }
+
+        button {
+            top: 15px;
+            right: 12px;
+            position: absolute;
+            background: none;
+            border: none;
+            color: $color-dark-gray;
+            font-size: .88rem;
+        }
+    }
+
+    /* Toggle view */
+    &.is-open {
+
+        .form-element-content {
+            display: block;
+        }
+    }
+}
+
+
+/* for accordions elements */
+
+/*.form-toggle {
+
+    .form-element-content {
+        display: none;
+    }
+}*/
+
+
+/* ------------------------------------ *\
+   #DATE-FILTER
+\* ------------------------------------ */
+
+.datepicker {
+    position: relative;
+    width: 50%; // 140px;
+    margin-left: 0;
+    padding-bottom: 10px;
+    float: left;
+
+    /* Calendar icon */
+    .date-input {
+        .input-element {
+            width: 100%;
+            margin: 0;
+            padding-left: 6px;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            margin: 0;
+            top: 22px;
+            right: 5px;
+        }
+    }
+
+    &:first-child .date-input {
+        padding-right: 5px;
+
+        /* Calendar icon */
+        span {
+            right: 10px;
+        }
+    }
+
+    label {
+        width: 100%;
+    }
+
+    @media (max-width: $bp-small) {
+        width: 100%;
+        clear: left;
+
+        &:last-child {
+            margin-left: 0;
+        }
+
+        .input-element {
+            height: 40px;
+        }
+
+        .date-input {
+            span {
+                top: 28px;
+                right: 14px;
+            }
+        }
+    }
+}
+
+.add-data-filter {
+    width: 100%;
+    margin: 0;
+    clear: both;
+    text-align: right;
+
+    .btn {
+        width: 140px;
+    }
+}
+
+
+/* ------------------------------------ *\
+   #FILTERS FACETED SEARCH
+\* ------------------------------------ */
+
+.active-searches {
+    padding: 0 30px 25px;
+
+    label {
+        display: inline-block;
+        height: 30px;
+        padding: 0 10px;
+        background: $color-button-cta-bg;
+        font-size: 13px;
+        line-height: 30px;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 3px;
+
+        &:hover,
+        &:focus {
+            background: $color-button-cta-bg-hover;
+        }
+
+        &:active {
+            background: $color-button-cta-bg-active;
+        }
+    }
+}
+

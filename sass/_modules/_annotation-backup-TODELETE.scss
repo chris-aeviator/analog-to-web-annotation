@@ -1,0 +1,506 @@
+/**
+ * ANNOTATION LIST ELEMENT
+ *
+ * 
+ */
+
+
+
+/* ------------------------------------ *\
+   #NOTEBOOKS AND ANNOTATIONS LIST
+\* ------------------------------------ */
+
+/* basic elements */
+
+.pnd-annotation {
+
+    & > a {
+        p {
+            color: $color-text-light;
+            font-weight: $font-weight-normal;
+        }
+    }
+
+    .annotation-container {
+        p {
+            color: $color-text-light;
+            font-weight: $font-weight-normal;
+        }
+
+        .semantic-tooltip p {
+            font-size: $font-size-small-text;
+            color: #fff;
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            color: $color-button-cta-bg-active;
+        }
+    }
+}
+
+/* Header block base for annotation and fragment */
+
+/*
+.box-header {
+
+    span {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+}
+*/
+
+
+
+/* annotations */
+
+.annotations {
+
+    .gallery-item {
+        & > a {
+
+            &:hover,
+            &:focus {
+
+                .pundit-icon {
+                    color: $color-button-cta-bg-hover;
+                }
+            }
+        }
+    }
+
+    /*block for notebook controls - edit/delete etc*/
+
+    .options {
+
+        span {
+            font-size: 12px;
+
+            @media (max-width: $bp-small) {
+                font-size: 11px;
+            }
+        }
+    }
+}
+
+/* Annotation block header */
+
+/*.annotation-header {
+
+    span {
+        color: $color-text-headings;
+    }
+
+    .author-name {
+        color: $color-text-link;
+    }
+
+    .annotation-time {
+        font-weight: $font-weight-normal;
+
+        a {
+            font-style: normal;
+            color: $color-text-link;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $color-button-cta-bg-hover;
+            }
+        }
+    }
+}*/
+
+/* Annotated/highlighted fragment or entity */
+
+.fragment {
+
+    p {
+        font-size: 16px;
+    }
+}
+
+/* Semantic fragment block header */
+
+.fragment-predicate {
+
+    .box-header {
+
+        .predicate-title {
+            font-size: 16px;
+            color: $color-background-dark;
+
+            .pundit-icon {
+                font-size: 11px;
+            }
+        }
+
+        .predicate-label {
+            height: 18px;
+            font-size: 11px;
+            line-height: 18px;
+            color: #fff;
+            font-weight: $font-weight-normal;
+            text-transform: uppercase;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+.predicate-title {
+
+    .pundit-icon {
+        color: $color-button-cta-bg;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-button-cta-bg-active;
+        }
+    }
+}
+
+/*.text-fragment {
+
+    p {
+        line-height: 2;
+
+        span {
+            line-height: 2;
+        }
+    }
+
+    &.fragment-predicate {
+
+        p {
+            line-height: 1.5;
+            span {
+                line-height: 1.5;
+            }
+        }
+    }
+}*/
+
+/*.predicate {
+
+    span {
+        font-size: 13px;
+        line-height: 22px;
+        font-style: italic;
+        color: #fff;
+        text-align: center;
+
+        @media (max-width: $bp-small) {
+            font-size: 11px;
+        }
+    }
+}*/
+
+/*.annotation-footer {
+
+    a {
+        font-size: 12px;
+        color: $color-text-light;
+        font-weight: $font-weight-normal;
+        line-height: 30px;
+
+        @media (max-width: $bp-small) {
+            font-size: 11px;
+        }
+
+        &:hover,
+        &:focus {
+            color: $color-button-cta-bg-hover;
+        }
+    }
+}*/
+
+/*@media (max-width: $bp-small) {
+    p {
+        font-size: 12px;
+    }
+}*/
+
+
+
+/* ------------------------------------ *\
+   #ANNOTATION LIST ELEMENTS SETTINGS
+\* ------------------------------------ */
+
+
+.pnd-annotation {
+
+    & > a, .annotation-container {
+        padding: 7px 0 30px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 0px 0px $color-border-normal;
+
+        /*@media (max-width: $bp-small) {
+            padding: 15px 10px 40px 10px;
+        }*/
+    }
+}
+
+    /* block for notebook controls - edit/delete etc */
+
+    /*.options {
+        right: 35px;
+        bottom: 5px;
+
+        @media (max-width: $bp-small) {
+            right: 25px;
+        }
+    }*/
+
+
+/* Header block base for annotation and fragment *//*
+
+.box-header {
+    display: block;
+    margin: 0 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    @include cf;
+
+    .annotation-pic {
+        margin-right: 10px;
+        float: left;
+        position: relative;
+        border-radius: 4px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    span {
+        display: block;
+    }
+}
+
+*//* Annotation block header *//*
+
+.annotation-header {
+    border-bottom: 1px solid $color-border-normal;
+
+    .author-avatar {
+        width: 30px;
+        height: 30px;
+    }
+}*/
+
+/* Semantic fragment block header */
+
+.fragment-predicate {
+
+    .box-header {
+
+        .annotation-pic {
+            width: 40px;
+            height: 40px;
+        }
+
+        .predicate-title {
+            font-size: 16px;
+
+            .pundit-icon {
+                position: initial;
+            }
+        }
+
+        .predicate-label {
+            display: inline-block;
+            height: 18px;
+            padding: 0 5px;
+            background: yellow; // $annotation-label;
+            border-radius: 3px;
+        }
+    }
+}
+
+/* Annotated/highlighted fragment or entity */
+
+.fragment {
+    //max-height: 120px;
+    //overflow-y: scroll;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .pundit-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: color 0.5 ease;
+    }
+
+/*    &.fragment-predicate {
+        background: $color-background-light;
+        border-top: 2px solid $color-border-normal;
+
+        .multiple-triple & {
+            border-bottom: 4px solid $color-border-normal;
+
+            &:last-of-type {
+                border-bottom: 2px solid $color-border-normal;
+            }
+        }
+    }
+
+    @media (max-width: $bp-small) {
+        padding-left: 20px;
+    }*/
+}
+
+/* Styles for highlighted text fragment */
+
+/*.text-fragment {
+
+    p {
+        margin: 0 7px;
+
+        span {
+            padding: 3px;
+            background: $color-highlight;
+        }
+    }
+
+    &.fragment-predicate {
+        padding-top: 15px;
+
+        p {
+            span {
+                background: transparent;
+            }
+        }
+
+        *//* Arrow decoration - Top Triangle *//*
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-top: 0;
+        }
+
+        *//* Stroke *//*
+        &::before {
+            top: -10px;
+            left: 21px;
+            *//* If 1px darken stroke slightly *//*
+            border-bottom-color: $color-border-normal;
+            border-width: 10px;
+        }
+        *//* Fill *//*
+        &::after {
+            top: -8px;
+            left: 22px;
+            border-bottom-color: $color-background-light;
+            border-width: 9px;
+        }
+    }
+}*/
+
+/* styles for comments */
+
+/*.predicate {
+    display: inline-block;
+    margin-left: 1%;
+    margin-bottom: -11px;
+    position: relative;
+    z-index: 300;
+    cursor: pointer;
+
+    span {
+        display: block;
+        height: 22px;
+        padding: 0 5px;
+        background: $color-predicate;
+
+        @media (max-width: $bp-small) {
+            //left: 80px;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            margin-left: -2px;
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-bottom: 3px solid $color-predicate;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            margin-left: -2px;
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top: 3px solid $color-predicate;
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        .semantic-tooltip {
+            opacity: 1;
+        }
+    }
+}*/
+
+/*.annotation-footer {
+    width: 100%;
+    height: 30px;
+    padding: 0 7px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    border-top: 2px solid $color-border-normal;
+
+    a {
+        i {
+            display: inline-block;
+            margin-right: 3px;
+        }
+    }
+
+    @media (max-width: $bp-small) {
+        padding: 5px 10px;
+    }
+}*/
+
+/* for annotation composed by multiple entities */
+
+.item-part {
+    margin: 40px 0;
+    position: relative;
+
+    &.last-item {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: $bp-small) {
+        margin: 30px 0;
+
+        &.last-item {
+            margin-bottom: 0;
+        }
+    }
+}

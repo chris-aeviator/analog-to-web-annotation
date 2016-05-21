@@ -1,1 +1,8 @@
 .remote-sync.json
+
+
+# No idea PhpStorm files
+.idea
+
+# Node modules
+node_modules

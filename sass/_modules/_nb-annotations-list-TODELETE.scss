@@ -1,0 +1,50 @@
+/**
+ * NOTEBOOKS AND ANNOTATIONS LISTS
+ *
+ *  STYLES FOR ELEMENTS LIST
+ */
+
+/* ------------------------------------ *\
+   #LIST ELEMENT
+\* ------------------------------------ */
+
+.gallery {
+    padding: 0 15px;
+
+    @media (max-width: $bp-small) {
+        padding: 0;
+    }
+}
+
+.gallery-item {
+    position: relative;
+
+    & > a, .annotation-container {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        border: 1px solid $color-border-normal;
+        background-color: #fff;
+        transition: all 0.5s ease;
+    }
+
+    &:hover,
+    &:focus {
+        .options {
+            opacity: 1;
+        }
+    }
+}
+
+.gallery-item-large {
+    display: block;
+    margin-bottom: 30px;
+
+    @media (max-width: $bp-small) {
+        margin-bottom: 20px;
+    }
+}
+
+
+

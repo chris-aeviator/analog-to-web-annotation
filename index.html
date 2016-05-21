@@ -9,6 +9,7 @@
   <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="http://tenso.rs/tesseract.js"></script>
 
+  <link rel="stylesheet" href="style.css">
 
   <style>
     #yourimage {
@@ -35,16 +36,46 @@
 
 <body>
 
-  <input type="file" capture="camera" accept="image/*" id="takePictureField">
+  <main class="main-content">
 
-  <img id="yourimage">
+    <div class="image-uploader">
 
+      <div class="image-uploader-1">
+        <h1>Welcome to <strong>Analogue Webnotator</strong></h1>
+        <p>Choose an image with some text you want to annotate</p>
+        <input type="file" class="inputfile" name="file" capture="camera" accept="image/*" id="takePictureField">
+        <label for="takePictureField">Choose a file</label>
+      </div>
 
-  <div id="display">
+      <div class="image-uploader-2">
+        <h1>Processing image</h1>
+        <p>We are processing the image to extract the text</p>
+      </div>
 
-  </div>
+      <div class="image-uploader-3">
+        <h1>Your text is here!</h1>
+        <p>Just add your comments and highlights with Hypothes.is</p>
+      </div>
 
-  <p><span class="statusPercent">0</span> %</p>
+    </div>
+
+    <div class="image">
+      <img id="yourimage">
+      <p id="image-process">Processing image... <span class="statusPercent">0</span> %</p>
+    </div>
+
+    <div class="ocr-text">
+      <div id="display"></div>
+    </div>
+
+    <div class="footer">
+      <p>
+        Developed for <a href="http://iannotate.org/2016/" target="_blank">iAnnotate 2016</a> Hackathon
+      </p>
+    </div>
+
+  </main>
+
 
 
 
@@ -79,6 +110,13 @@
     }
 
     function processPicture(){
+
+      // Processing picture
+      $("#image-process").show();
+      $(".image-uploader-1").hide();
+      $(".image-uploader-2").show();
+      $(".image-uploader-3").hide();
+
       var img = new Image();
           img.src = document.getElementById('yourimage').src;
 
@@ -88,7 +126,16 @@
                                 console.log(e)
                                 $('.statusPercent').text(e.recognized*100);
                                 }
-                                  }).then( function(d){ document.getElementById('display').innerHTML+=d.text } )
+                                  }).then(
+                                      function(d){
+                                        document.getElementById('display').innerHTML+=d.text;
+                                        // Text is converted
+                                        $(".image").hide();
+                                        $(".image-uploader-1").hide();
+                                        $(".image-uploader-2").hide();
+                                        $(".image-uploader-3").show();
+                                      }
+                                  )
                                 }
     }
   </script>

@@ -1,0 +1,219 @@
+/**
+ * PAGE CONTENT HEADER
+ *
+ * styles for page header, breadcrumbs, filters etc
+ */
+
+/* ------------------------------------ *\
+   #TOP
+\* ------------------------------------ */
+
+.content-header {
+    padding: 25px;
+    position: relative;
+
+    /* Block of contents on the left */
+    .content-header-left {
+        margin-bottom: 20px;
+    }
+
+    /* Block of contents on the right */
+    .content-header-right {
+
+        /* Buttons on the right */
+        .btn-group {
+            text-align: right;
+
+            .pnd-btn {
+                margin-left: 10px;
+            }
+
+            /* Special style for dropdown here */
+            ul.pnd-dropdown {
+                right: 0;
+                margin-top: -7px;
+            }
+
+            .pnd-json-ld-copy {
+                padding: 5px 10px 10px;
+
+                input {
+                    width: 100%;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+    h1 {
+        color: $color-text;
+    }
+
+    h2.nb-annotations-number {
+        margin-bottom: 11px;
+        font-size: 1.2rem;
+        font-weight: $font-weight-normal;
+    }
+
+    .nb-page-title {
+        display: inline-block;
+        cursor: pointer;
+
+        .pnd-icon {
+            opacity: 0;
+        }
+    }
+
+    /* Input for editing title */
+    .input-edit-title {
+        display: none;
+        width: 100%;
+        height: 45px;
+        margin: 0;
+        background: $color-background-base;
+        border: none;
+        border-bottom: 1px solid $color-brand;
+        font-size: 2rem;
+        font-weight: $font-weight-normal;
+        line-height: 1.2;
+
+        &:focus {
+            border-bottom: 1px solid $color-brand;
+        }
+    }
+}
+
+
+/* ------------------------------------ *\
+   #BELOW
+\* ------------------------------------ */
+
+.content-header {
+    .content-header-sub {
+        position: relative;
+        padding: 20px 0;
+        clear: both;
+        border-top: 1px solid $color-border-normal;
+        border-bottom: 1px solid $color-border-normal;
+        @include cf;
+    }
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+    @include span(11 of 14); // TODO Move into layout.scss
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: $font-weight-normal;
+
+    li {
+        display: inline;
+        margin: 0 2px;
+        padding: 0;
+        font-size: 1rem;  // 0.88rem;
+
+        /* For separators between breadcrumb elements */
+        & + li::before {
+            display: inline-block;
+            content: "\f107";
+            margin-top: -1px;
+            padding: 0 4px 0 0;
+            font-family: 'pundit-icon-font';
+            font-size: 0.8rem; // 0.7rem;
+            vertical-align: middle;
+        }
+    }
+}
+
+/* Filters */
+.filters {
+    position: absolute;
+    top: 14px;
+    right: 0;
+    text-align: right;
+}
+
+/* ------------------------------------ *\
+   #RESPONSIVE
+\* ------------------------------------ */
+
+@media all and (max-width: $bp-ipad-portrait) { // 768px
+
+    .content-header {
+        padding: 18px;
+
+        h1 {
+            font-size: 1.4rem;
+        }
+
+        .input-edit-title {
+            font-size: 1.4rem;
+        }
+
+        h2.nb-annotations-number {
+            margin-bottom: 8px;
+            font-size: 0.88rem;
+        }
+
+        /* Block of contents on the left */
+        .content-header-left {
+            margin-bottom: 15px;
+        }
+
+        /* Block of contents on the right */
+        .content-header-right {
+            margin-bottom: 20px;
+
+            .btn-group {
+                text-align: left;
+
+                .pnd-btn {
+                    margin-left: 0;
+                    margin-right: 10px;
+                    /* Like small buttons */
+                    height: 26px;
+                    font-size: 12px;
+                    line-height: 26px;
+                }
+
+                /* Special style for dropdown here */
+                ul.pnd-dropdown {
+                    right: auto;
+                    left: 0;
+                    margin-top: -7px;
+                }
+            }
+        }
+
+        .content-header-sub {
+            padding: 10px 0;
+        }
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb {
+
+        li {
+            font-size: 0.88rem;
+
+            /* For separators between breadcrumb elements */
+            & + li::before {
+                font-size: 0.7rem;
+            }
+        }
+    }
+
+    /* Filters */
+    .filters {
+        top: 3px;
+
+        .btn-filters {
+            span:first-child {
+                display: none;
+            }
+        }
+    }
+
+}

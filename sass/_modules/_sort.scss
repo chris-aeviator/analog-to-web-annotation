@@ -1,0 +1,45 @@
+/**
+ * SORT DROPDOWN
+ *
+ * Dropdown used to select sorting of elements in lists
+ * Momentary disabled
+ */
+
+
+/* ------------------------------------ *\
+   #SORT-DROPDOWN
+\* ------------------------------------ */
+
+.sort-by {
+    display: none;
+
+    .form-element {
+        margin: 0;
+    }
+}
+
+.sort-by {
+    width: 200px;
+    top: 196px;
+    right: 95px;
+    border: 1px solid $color-border-normal;
+    background: #fff;
+
+    @media (max-width: $bp-med-small){
+        top: 183px;
+    }
+
+    @media (max-width: $bp-small) {
+        top: 177px;
+        right: 15px;
+    }
+}
+
+/* opening sortby */
+
+.sortby-open {
+
+    .sort-by {
+        display: block;
+    }
+}
