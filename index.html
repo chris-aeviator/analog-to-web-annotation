@@ -12,6 +12,7 @@
   <style>
     #yourimage {
       width: 100%;
+      max-width: 300px;
     }
 
     #swatches {
@@ -79,10 +80,11 @@
 
     //Credit: https://www.youtube.com/watch?v=EPYnGFEcis4&feature=youtube_gdata_player
     function gotPic(event) {
-
+      console.log("got pic");
       if (event.target.files.length == 1 &&
         event.target.files[0].type.indexOf("image/") == 0) {
-        var objectUrl$ = ("#yourimage").attr("src", URL.createObjectURL(event.target.files[0]));
+        console.log("showing picture");
+        $("#yourimage").attr("src", URL.createObjectURL(event.target.files[0]));
         // console.log(objectUrl);
       }
     }
