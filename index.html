@@ -65,10 +65,11 @@
 
     //Credit: https://www.youtube.com/watch?v=EPYnGFEcis4&feature=youtube_gdata_player
 	function gotPic(event) {
-      console.log(event);
+
         if(event.target.files.length == 1 &&
            event.target.files[0].type.indexOf("image/") == 0) {
-            $("#yourimage").attr("src",URL.createObjectURL(event.target.files[0]));
+            var objectUrl$=("#yourimage").attr("src",URL.createObjectURL(event.target.files[0]));
+            // console.log(objectUrl);
         }
 	}
 
